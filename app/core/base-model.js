@@ -1,4 +1,3 @@
-
 /**
  * Base model class
  * @class

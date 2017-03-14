@@ -1,7 +1,7 @@
 import express from 'express';
 
 /* controllers */
-import { ModulesController } from '../modules';
+import { ModulesController } from './modules';
 
 
 const router = express.Router();

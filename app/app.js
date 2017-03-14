@@ -3,7 +3,7 @@ import express from 'express';
 /* libs */
 
 /* custom modules */
-import {Routes} from './app-routes';
+import { Routes } from './app-routes';
 
 const app = express();
 

@@ -1,4 +1,6 @@
 import express from 'express';
+import { Module } from './modules-model';
+import { ModulesDao } from './modules-dao';
 
 const router = express.Router();
 
