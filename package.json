@@ -1,0 +1,19 @@
+{
+  "name": "code-migrate-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ridel1e/code-migrate-backend.git"
+  },
+  "author": "ridel1e",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ridel1e/code-migrate-backend/issues"
+  },
+  "homepage": "https://github.com/Ridel1e/code-migrate-backend#readme"
+}
