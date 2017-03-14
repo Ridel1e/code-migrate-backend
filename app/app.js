@@ -1,4 +1,14 @@
+import express from 'express';
 
-export default () => {
-  console.log(global.testValue);
-}
+/* libs */
+
+/* custom modules */
+import {Routes} from './app-routes';
+
+const app = express();
+
+/* app usages */
+app.use(Routes);
+
+export { app }
+
