@@ -1,9 +1,9 @@
 
 const scheme = {
-  _id: undefined,
-  name: undefined,
-  type: undefined,
-  description: undefined
+  _id: null,
+  name: null,
+  type: null,
+  description: null
 };
 
 export { scheme }

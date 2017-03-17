@@ -1,1 +1,1 @@
-export {MongoDBDAO} from './Mongodb-dao';
+import { MongoDBDAOCreator } from './mongodb-dao-creator';

@@ -1,20 +1,22 @@
-import { AbstractDAO } from './abstract-dao';
+import { AbstractDAOCreator } from './abstract-dao-creator';
 import { MongoDBClient } from '../database-client';
 
-class MongoDBDAO extends AbstractDAO {
-
+class MongoDBDAOCreator extends AbstractDAOCreator {
   /**
    * @override
    * @protected 
    */
   _onFindAll () {
-    console.log(this.Collection);
     return MongoDBClient
       .conntection
       .collection(this.Collection)
       .find()
       .toArray();
   }
+
+  static createDao (config) {
+    return new MongoDBDAOCreator(config);
+  }
 }
 
-export { MongoDBDAO }
+export { MongoDBDAOCreator }

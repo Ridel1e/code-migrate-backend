@@ -1,13 +1,16 @@
 /**
- * Abstract data access object
+ * Abstract data access object generator
  * @abstract 
  * @class
  */
-class AbstractDAO {
+class AbstractDAOCreator {
   /**
    * @constructs
    */
-  constructor () {}
+  constructor (config) {
+    this.Entity = config.Entity;
+    this.Collection = config.Collection;
+  }
   
   findAll () { 
     return this._onFindAll()
@@ -109,7 +112,7 @@ class AbstractDAO {
    */
   _onRemove (object) { return Promise.resolve() }
 
-  get Entity () { return {}; } 
+  static createDao () {}
 }
 
-export { AbstractDAO }
+export { AbstractDAOCreator }
