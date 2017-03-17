@@ -36,7 +36,7 @@ class BaseModel {
    * @return {Object} sanitized attributes
    */
   _sanitize (attributes) {
-    return Object.assign({}, this._modelScheme, attributes);
+    return Object.assign({}, this.constructor.Scheme, attributes);
   }
 
   /**

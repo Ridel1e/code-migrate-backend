@@ -1,12 +1,9 @@
-import { BaseModel } from '../core';
+import { ModelCreator } from '../core';
 import { scheme } from './modules-scheme';
 
-class Module extends BaseModel {
-
-  
-  get _modelScheme () {
-    return scheme;
-  }
-}
+const Module = ModelCreator.createModel('Module', {
+  name: 'Module',
+  scheme: scheme
+});
 
 export { Module }
