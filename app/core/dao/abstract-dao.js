@@ -9,30 +9,29 @@ class AbstractDAO {
    */
   constructor () {}
   
-  findAll () {
-    return 
-      _onFindAll()
+  findAll () { 
+    return this._onFindAll()
       .then((rawData) => 
-        rawData.map((item) => new this.Entity(item)));
+        rawData.map((item) => new this.Entity(item)));  
   }
 
   findBy (params) {
     return 
-      _onFindBy(params)
+      this._onFindBy(params)
       .then((rawData) => 
         rawData.map((item) => new this.Entity(item)));
   }
 
   findById (id) {
     return
-      _onFindById(id)
+      this._onFindById(id)
       .then((rawData) => 
         new this.Entity(rawData));
   }
 
   findOneBy (params) {
     return
-      _onFindById(params)
+      this._onFindById(params)
       .then((rawData) => 
         new this.Entity(rawData));
   }
@@ -45,7 +44,7 @@ class AbstractDAO {
     }
 
     return
-      _onSave(object)
+      this._onSave(object)
       .then((id) => 
         object.set('id', id));
   }
@@ -58,7 +57,7 @@ class AbstractDAO {
     }
 
     return
-      _onRemove(object)
+      this._onRemove(object)
   }
 
   /* abstract methods */

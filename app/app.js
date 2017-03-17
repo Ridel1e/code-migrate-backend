@@ -8,7 +8,6 @@ import { MongoDBClient } from './core';
 import { config } from './config';
 
 const app = express();
-console.log(MongoDBClient);
 MongoDBClient.connect(config.database);
 
 /* app usages */

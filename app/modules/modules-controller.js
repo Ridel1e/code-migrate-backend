@@ -7,7 +7,9 @@ const router = express.Router();
 
 /* handlers */
 router.get('/', (req, res) => {
-
+  ModuleDao
+    .findAll()
+    .then();
   
   res.send('hello world');
 });

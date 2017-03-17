@@ -1,9 +1,13 @@
-import {AbstractDAO} from '../core';
-import {Module} from './modules-model';
+import { MongoDBDAO } from '../core';
+import { Module } from './modules-model';
 
-class ModuleDao extends AbstractDAO {
+class ModuleDao extends MongoDBDAO {
     get Entity () {
       return Module;
+    }
+
+    get Collection () {
+      return 'moduleCollection';
     }
 }
 

@@ -3,7 +3,7 @@
 const database = {
   port: process.env.DB_PORT || 27017,
   ip: process.env.DB_IP || 'localhost',
-  dbName: 'usercollection'
+  dbName: 'nodetest1'
 };
 
 export { database }

@@ -1,1 +1,1 @@
-export {AbstractDAO} from './abstract-dao';
+export {MongoDBDAO} from './Mongodb-dao';
