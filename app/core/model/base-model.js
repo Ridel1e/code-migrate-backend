@@ -39,12 +39,9 @@ class BaseModel {
     return Object.assign({}, this.constructor.Scheme, attributes);
   }
 
-  /**
-   * @abstract
-   */
-  get _modelScheme () {
-    return {};
-  }  
+  get id () {
+    return this._attributes[this.constructor.idAttribute];
+  }
 }
 
 export { BaseModel }
