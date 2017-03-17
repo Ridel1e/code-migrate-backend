@@ -4,8 +4,12 @@ import express from 'express';
 
 /* custom modules */
 import { Routes } from './app-routes';
+import { MongoDBClient } from './core';
+import { config } from './config';
 
 const app = express();
+console.log(MongoDBClient);
+MongoDBClient.connect(config.database);
 
 /* app usages */
 app.use(Routes);

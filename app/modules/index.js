@@ -1,3 +1,3 @@
 export { ModulesController } from './modules-controller';
-export { ModulesModel } from './modules-model';
-export { ModulesDao } from './modules-dao';
+export { ModuleDao } from './modules-dao';
+export { Module } from './modules-model';
