@@ -25,6 +25,10 @@ class BaseModel {
     return Object.assign({}, this._attributes);
   }
 
+  toJson () {
+    return JSON.stringify(this.toObject());
+  }
+
   /**
    * Returns sanitized attributes
    * @private 

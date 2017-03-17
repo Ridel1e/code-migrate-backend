@@ -2,6 +2,7 @@ import express from 'express';
 
 import { Module } from './modules-model';
 import { ModuleDao } from './modules-dao';
+import { Serializer } from '../core';
 
 const router = express.Router();
 
@@ -9,9 +10,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
   ModuleDao
     .findAll()
-    .then();
-  
-  res.send('hello world');
+    .then((modules) => {
+      res.json(Serializer.serialize(modules));
+    });
 });
 
 export { router as ModulesController }

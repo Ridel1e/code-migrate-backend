@@ -10,7 +10,7 @@ class MongoDBClient extends DBClient {
   _onConnect (config) {
     const url = 
       `mongodb://${config.ip}:${config.port}/${config.dbName}`;
-    console.log(url);  
+
     return MongoClient.connect(url);
   }
 
