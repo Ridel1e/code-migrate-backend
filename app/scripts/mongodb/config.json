@@ -1,0 +1,6 @@
+{
+  "ip": "localhost",
+  "port": 27017,
+  "dbName": "nodetest1",
+  "collectionName": "usercollection"
+}
