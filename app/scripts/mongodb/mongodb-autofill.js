@@ -19,25 +19,36 @@ function main () {
   configPath = resolvePath(args[0]);
   dataPath = resolvePath(args[1]);
 
-  console.log('requiring data by pass...')
+  console.log('requiring data by pass...');
+  console.log('\n');
+
   config = require(configPath);
   data = require(dataPath);
 
   collectionName = config.collectionName;
   connectionUrl = getConnectionUrl(config);
   
-  console.log('connecting to database');
-  getDBConnectionAsync(connectionUrl)
+  console.log('connecting to database...');
+  console.log('\n');
+  MongoClient.connectAsync(connectionUrl)
     .then(function (connection) {
       /* save conncetion in scope top level */
       dbConnection = connection;
 
       console.log('clear collection...');
-      return dropCollectionAsync(dbConnection, collectionName);
+      console.log('\n');
+      
+      return dbConnection
+        .collection(collectionName)
+        .removeAsync()
     })
     .then(function () {
       console.log('filling collection with nesessary data...');
-      return insertManyAsync(dbConnection, collectionName, data);
+      console.log('\n');
+
+      return dbConnection
+        .collection(collectionName)
+        .insertManyAsync(data);
     })
     .catch(function(error) {
       console.error(error);
@@ -54,25 +65,6 @@ function main () {
  */
 function resolvePath (relatedPath) {
   return path.resolve(process.cwd(), relatedPath);
-}
-
-/**
- * 
- */
-function getDBConnectionAsync (url) {
-  return MongoClient.connectAsync(url);
-}
-
-function dropCollectionAsync (connection, collection) {
-  return connection
-    .collection(collection)
-    .removeAsync();
-}
-
-function insertManyAsync (conncetion, collection, data) {
-  return conncetion
-    .collection(collection)
-    .insertManyAsync(data);
 }
 
 /**
